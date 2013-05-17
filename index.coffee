@@ -8,7 +8,7 @@ new Block ->
   @output "ok", "bool", "Returns true of false if lookup succeeds."
   @handle (inputs, callback) ->
     dns.lookup inputs.domain, (err, address, family) ->
-      outputs
+      outputs =
         ok: if err then false else true
       callback false, outputs
   @listen()
